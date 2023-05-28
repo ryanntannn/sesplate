@@ -3,20 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx prisma generate && next dev",
+    "db:up": "docker compose up -d",
+    "generate": "npx prisma generate && npx prisma db push && npx prisma studio",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@opengovsg/sgid-client": "^2.0.0",
+    "@prisma/client": "^4.14.1",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
+    "cookies-next": "^2.1.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "jsonwebtoken": "^9.0.0",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/uuid": "^9.0.1",
+    "prisma": "^4.14.1"
   }
 }
